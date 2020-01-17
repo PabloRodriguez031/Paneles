@@ -1,0 +1,272 @@
+<br>
+<h1 class="text-center titulo">Editar Inicio</h1>
+<br>
+<form #homeForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(homeForm)">
+                    Guardar Cambios
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+              [(ngModel)]="homeService.selectedHome.$keyRegistro">
+          
+            <label><b>Slider</b></label>
+            <editor [(ngModel)]="homeService.selectedHome.titulo" 
+            name="titulo" id="titulo" #titulo="ngModel"></editor>                                    
+          
+            <label>Logo Actual</label><br>
+            <img [src]="homeService.selectedHome.image4" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload4($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent4 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 612px x 300px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image4" id ="image4" #image4="ngModel" [(ngModel)]="homeService.selectedHome.image4">
+              <option [value]="homeService.selectedHome.image4">Imagen Actual</option>
+              <option [value]="urlImage4 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage4 | async">
+              <img [src]="urlImage4 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label>Imagen Actual 1</label><br>
+            <img [src]="homeService.selectedHome.image1" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 1280px x 451px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="homeService.selectedHome.image1">
+              <option [value]="homeService.selectedHome.image1">Imagen Actual</option>
+              <option [value]="urlImage | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage | async">      
+              <img [src]="urlImage | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label>Imagen Actual 2</label><br>
+            <img [src]="homeService.selectedHome.image2" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 1280px x 451px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="homeService.selectedHome.image2">
+              <option [value]="homeService.selectedHome.image2">Imagen Actual</option>
+              <option [value]="urlImage2 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage2 | async">            
+              <img [src]="urlImage2 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label>Imagen Actual 3</label><br>
+            <img [src]="homeService.selectedHome.image3" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload3($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent3 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 1280px x 451px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image3" id ="image3" #image3="ngModel" [(ngModel)]="homeService.selectedHome.image3">
+              <option [value]="homeService.selectedHome.image3">Imagen Actual</option>
+              <option [value]="urlImage3 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage3 | async">            
+              <img [src]="urlImage3 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label><b>Sección 1</b></label><br>
+            <label>Titulo</label><br>            
+            <input type="text" class="form-control" name="titulo_section1" id="titulo_section1" #titulo_section1="ngModel"
+            [(ngModel)]="homeService.selectedHome.titulo_section1">
+            <label>Fecha</label><br>
+            <input type="text" class="form-control" name="fecha_section1" id="fecha_section1" #fecha_section1="ngModel"
+            [(ngModel)]="homeService.selectedHome.fecha_section1">
+            <label>Lugar</label><br>
+            <input type="text" class="form-control" name="lugar_section1" id="lugar_section1" #lugar_section1="ngModel"
+            [(ngModel)]="homeService.selectedHome.lugar_section1">
+            <br>
+          
+            <label>Descripción 1</label><br>
+            <editor [(ngModel)]="homeService.selectedHome.descripcion1_section1" 
+            name="descripcion1_section1" id="descripcion1_section1" #descripcion1_section1="ngModel"></editor>              
+
+            <label>Imagen Actual</label><br>
+            <img [src]="homeService.selectedHome.image5" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload5($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent5 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 940px x 250px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image5" id ="image5" #image5="ngModel" [(ngModel)]="homeService.selectedHome.image5">
+              <option [value]="homeService.selectedHome.image5">Imagen Actual</option>
+              <option [value]="urlImage5 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage5 | async">                
+              <img [src]="urlImage5 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label>Descripción 2</label><br>
+            <editor [(ngModel)]="homeService.selectedHome.descripcion2_section1" 
+            name="descripcion2_section1" id="descripcion2_section1" #descripcion2_section1="ngModel"></editor>              
+            
+            <label>Imagen Actual</label><br>
+            <img [src]="homeService.selectedHome.image6" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload6($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent6 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 940px x 250px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image6" id ="image6" #image6="ngModel" [(ngModel)]="homeService.selectedHome.image6">
+              <option [value]="homeService.selectedHome.image6">Imagen Actual</option>
+              <option [value]="urlImage6 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage6 | async">                
+              <img [src]="urlImage6 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label>Descripción 3</label><br>
+            <editor [(ngModel)]="homeService.selectedHome.descripcion3_section1" 
+            name="descripcion3_section1" id="descripcion3_section1" #descripcion3_section1="ngModel"></editor>              
+            
+            <label>Imagen Actual</label><br>
+            <img [src]="homeService.selectedHome.image7" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload7($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent7 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 940px x 250px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image7" id ="image7" #image7="ngModel" [(ngModel)]="homeService.selectedHome.image7">
+              <option [value]="homeService.selectedHome.image7">Imagen Actual</option>
+              <option [value]="urlImage7 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage7 | async">                
+              <img [src]="urlImage7 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+          
+            <label><b>Sección 2</b></label><br>
+            <label>Titulo</label><br>
+            <input type="text" class="form-control" name="titulo_section2" id="titulo_section2" #titulo_section2="ngModel"
+            [(ngModel)]="homeService.selectedHome.titulo_section2">
+            <label>Descripción</label><br>
+            <editor [(ngModel)]="homeService.selectedHome.descripcion_section2" 
+            name="descripcion_section2" id="descripcion_section2" #descripcion_section2="ngModel"></editor>                          
+            <label>Link</label><br>
+            <input type="text" class="form-control" name="link_section2" id="link_section2" #link_section2="ngModel"
+            [(ngModel)]="homeService.selectedHome.link_section2">
+            <label>Seleccionar Archivo</label><br>
+            <input type="file" (change)="onUpload9($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent9 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <select class="form-control col-sm-3" name="file" id ="file" #file="ngModel" [(ngModel)]="homeService.selectedHome.file">
+              <option [value]="homeService.selectedHome.file">Archivo Actual</option>
+              <option [value]="urlFile | async">Archivo Nuevo</option>
+            </select>
+            <br>
+            <hr>
+            <br>
+          
+            <label><b>Sección 3</b></label><br>
+            <label>Titulo</label><br>
+            <input type="text" class="form-control" name="titulo_section3" id="titulo_section3" #titulo_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.titulo_section3">
+            <label>Fecha</label><br>
+            <input type="text" class="form-control" name="fecha1_section3" id="fecha1_section3" #fecha1_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.fecha1_section3">
+            <label>Hora</label><br>
+            <input type="text" class="form-control" name="hora1_section3" id="hora1_section3" #hora1_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.hora1_section3">
+            <label>Fecha</label><br>
+            <input type="text" class="form-control" name="fecha2_section3" id="fecha2_section3" #fecha2_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.fecha2_section3">
+            <label>Hora</label><br>
+            <input type="text" class="form-control" name="hora2_section3" id="hora2_section3" #hora2_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.hora2_section3">
+            <label>Fecha</label><br>
+            <input type="text" class="form-control" name="fecha3_section3" id="fecha3_section3" #fecha3_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.fecha3_section3">
+            <label>Hora</label><br>
+            <input type="text" class="form-control" name="hora3_section3" id="hora3_section3" #hora3_section3="ngModel"
+            [(ngModel)]="homeService.selectedHome.hora3_section3">
+            <br>
+          
+            <label><b>Sección 4</b></label><br>
+            <label>Titulo</label><br>
+            <input type="text" class="form-control" name="titulo_section4" id="titulo_section4" #titulo_section4="ngModel"
+            [(ngModel)]="homeService.selectedHome.titulo_section4">
+            <label>Imagen Actual</label><br>
+            <img [src]="homeService.selectedHome.image8" class="preview">
+            <br>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload8($event)"><br><br>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent8 | async) +'%'"></div>
+            </div> 
+            <br>     
+            <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 1500px x 918px)</strong></label><br>
+            <select class="form-control col-sm-3" name="image8" id ="image8" #image8="ngModel" [(ngModel)]="homeService.selectedHome.image8">
+              <option [value]="homeService.selectedHome.image8">Imagen Actual</option>
+              <option [value]="urlImage8 | async">Imagen Nueva</option>
+            </select>
+            <div *ngIf="urlImage8 | async">          
+              <img [src]="urlImage8 | async" class="preview">  
+            </div>
+            <br>
+            <hr>
+            <label>Sub-Titulo</label><br>
+            <input type="text" class="form-control" name="subtitulo_section4" id="subtitulo_section4" #subtitulo_section4="ngModel"
+            [(ngModel)]="homeService.selectedHome.subtitulo_section4">
+            <label>Description</label><br>
+            <editor [(ngModel)]="homeService.selectedHome.descripcion_section4" 
+            name="descripcion_section4" id="descripcion_section4" #descripcion_section4="ngModel"></editor>                          
+            <input type="hidden" class="form-control" name="link_section4" id="link_section4" #link_section4="ngModel"
+            [(ngModel)]="homeService.selectedHome.link_section4">
+            <br>
+        
+          </div>
+
+  </div>
+
+  
+
+</form>

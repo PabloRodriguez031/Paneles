@@ -1,0 +1,36 @@
+<br><br>
+
+<div class="col-md-12">
+  <div class="row">
+
+    <div class="col-md-3 col-md-offset-1" >
+      <div class="fixed col-md-2">              
+        <table class="table table-bordered">
+
+            <tr *ngFor="let contactlista of contactList">
+              <td>Edit Contact</td>
+              <td>
+                <button type="button" (click)="onEdit(contactlista)" class="btn btn-outline-danger btn-sm">
+                  Edit
+                </button>
+              </td>
+            </tr>
+
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <app-contact></app-contact>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

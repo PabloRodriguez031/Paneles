@@ -1,0 +1,87 @@
+<br>
+<h1 class="text-center titulo">Edit Contact</h1>
+<br>
+<form #contactForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(contactForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>  
+
+      <div class="col-md-9">
+
+          <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+          [(ngModel)]="contactService.selectedContact.$keyRegistro">
+      
+          <label><b>Title</b></label>
+          <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+            [(ngModel)]="contactService.selectedContact.titulo">
+            
+          <label><b>Current Image 1</b></label><br>
+          <img [src]="contactService.selectedContact.image1" class="preview">
+          <br>
+          <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+          <div class="progress">  
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+          </div>
+          <label>Selected Image <strong>(Recommended image size: 1600px x 325px)</strong></label><br> 
+          <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="contactService.selectedContact.image1">
+            <option [value]="contactService.selectedContact.image1">Current image</option>
+            <option [value]="urlImage | async">New image</option>
+          </select> 
+          <div *ngIf="urlImage | async">                    
+            <img [src]="urlImage | async" class="preview">   
+          </div> 
+          <br>
+      
+          <label><b>Title 2</b></label>
+          <input type="text" class="form-control" name="titulo2" id="titulo2" #titulo2="ngModel"
+            [(ngModel)]="contactService.selectedContact.titulo2">
+          <br>
+      
+          <label><b>Phone Number</b></label>
+          <input type="text" class="form-control" name="telefono" id="telefono" #telefono="ngModel"
+            [(ngModel)]="contactService.selectedContact.telefono">
+          <br>
+      
+        <label><b>Email</b></label>
+        <input type="text" class="form-control" name="email" id="email" #email="ngModel"
+          [(ngModel)]="contactService.selectedContact.email">
+      
+        <br>
+      
+        <label><b>Address</b></label>
+        <input type="text" class="form-control" name="direccion" id="direccion" #direccion="ngModel"
+          [(ngModel)]="contactService.selectedContact.direccion">
+        <br>
+        <label><b>Current Image 2</b></label><br>
+        <img [src]="contactService.selectedContact.image2" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+        <div class="progress">  
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+        </div>
+        <label>Selected Image <strong>(Recommended image size: 335px x 335px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="contactService.selectedContact.image2">
+          <option [value]="contactService.selectedContact.image2">Current image</option>
+          <option [value]="urlImage | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage2 | async">                    
+          <img [src]="urlImage2 | async" class="preview">   
+        </div> 
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

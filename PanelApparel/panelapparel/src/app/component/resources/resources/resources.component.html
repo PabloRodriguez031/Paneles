@@ -1,0 +1,349 @@
+<br>
+<h1 class="text-center titulo">Edit Resources</h1>
+<br>
+<form #resourcesForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(resourcesForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="col-md-9">
+
+          <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+          [(ngModel)]="resourcesService.selectedResources.$keyRegistro">
+      
+        <label><b>Slider</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo">
+        
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 1280px x 451px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="resourcesService.selectedResources.image1">
+          <option [value]="resourcesService.selectedResources.image1">Current image</option>
+          <option [value]="urlImage | async">New image</option>
+        </select>
+        <div *ngIf="urlImage | async">            
+          <img [src]="urlImage | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+      
+        <label><b>Section 1</b></label><br>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_seccion1" id="titulo_seccion1" #titulo_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_seccion1">
+        <label>Descripction</label>
+        <input type="text" class="form-control" name="descripcion_seccion1" id="descripcion_seccion1" #descripcion_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.descripcion_seccion1">
+      
+        <label>Left box</label>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja1_seccion1" id="titulo_caja1_seccion1" #titulo_caja1_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja1_seccion1">
+        <label>Description</label>
+        <input type="text" class="form-control" name="descripcion_caja1_seccion1" id="descripcion_caja1_seccion1" #descripcion_caja1_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.descripcion_caja1_seccion1">
+        <label>Type</label>
+        <input type="text" class="form-control" name="tipo_caja1_seccion1" id="tipo_caja1_seccion1" #tipo_caja1_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.tipo_caja1_seccion1">
+      
+        <label>Right box</label>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja2_seccion1" id="titulo_caja2_seccion1" #titulo_caja2_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja2_seccion1">
+        <label>Description</label>
+        <input type="text" class="form-control" name="descripcion_caja2_seccion1" id="descripcion_caja2_seccion1" #descripcion_caja2_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.descripcion_caja2_seccion1">
+        <label>Type</label>
+        <input type="text" class="form-control" name="tipo_caja2_seccion1" id="tipo_caja2_seccion1" #tipo_caja2_seccion1="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.tipo_caja2_seccion1">
+        <br>
+      
+        <label><b>Section 2</b></label><br>
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image2" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="resourcesService.selectedResources.image2">
+          <option [value]="resourcesService.selectedResources.image2">Current image</option>
+          <option [value]="urlImage2 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage2 | async">            
+          <img [src]="urlImage2 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja1_seccion2" id="titulo_caja1_seccion2" #titulo_caja1_seccion2="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja1_seccion2">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja1_seccion2"
+          name="descripcion_caja1_seccion2" id="descripcion_caja1_seccion2" #descripcion_caja1_seccion2="ngModel"></editor>           
+        <label>Link</label>
+        <input type="text" class="form-control" name="link_caja1_seccion2" id="link_caja1_seccion2" #link_caja1_seccion2="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.link_caja1_seccion2">
+        <label>Select File</label><br>
+        <input type="file" (change)="onUpload9($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent9 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <select class="form-control col-sm-3" name="file" id ="file" #file="ngModel" [(ngModel)]="resourcesService.selectedResources.file">
+          <option [value]="resourcesService.selectedResources.file">Current file</option>
+          <option [value]="urlFile | async">New file</option>
+        </select>
+        <br>
+        <hr>
+
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image3" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload3($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent3 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image3" id ="image3" #image3="ngModel" [(ngModel)]="resourcesService.selectedResources.image3">
+          <option [value]="resourcesService.selectedResources.image3">Current image</option>
+          <option [value]="urlImage3 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage3 | async">            
+          <img [src]="urlImage3 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja2_seccion2" id="titulo_caja2_seccion2" #titulo_caja2_seccion2="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja2_seccion2">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja2_seccion2"
+          name="descripcion_caja2_seccion2" id="descripcion_caja2_seccion2" #descripcion_caja2_seccion2="ngModel"></editor>           
+        <label>Link</label>
+        <input type="text" class="form-control" name="link_caja2_seccion2" id="link_caja2_seccion2" #link_caja2_seccion2="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.link_caja2_seccion2">
+        <label>Select File</label><br>
+        <input type="file" (change)="onUpload10($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent10 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <select class="form-control col-sm-3" name="file2" id ="file2" #file2="ngModel" [(ngModel)]="resourcesService.selectedResources.file2">
+          <option [value]="resourcesService.selectedResources.file2">Current file</option>
+          <option [value]="urlFile2 | async">New file</option>
+        </select>
+        <br>
+        <hr>
+
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image4" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload4($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent4 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image4" id ="image4" #image4="ngModel" [(ngModel)]="resourcesService.selectedResources.image4">
+          <option [value]="resourcesService.selectedResources.image4">Current image</option>
+          <option [value]="urlImage4 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage4 | async">            
+          <img [src]="urlImage4 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja3_seccion2" id="titulo_caja3_seccion2" #titulo_caja3_seccion2="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja3_seccion2">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja3_seccion2"
+          name="descripcion_caja3_seccion2" id="descripcion_caja3_seccion2" #descripcion_caja3_seccion2="ngModel"></editor>           
+        <br>
+      
+        <label><b>Section 3</b></label><br>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_seccion3" id="titulo_seccion3" #titulo_seccion3="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.descripcion_caja2_seccion2">
+        <label>Description</label>
+        <input type="text" class="form-control" name="descripcion_seccion3" id="descripcion_seccion3" #descripcion_seccion3="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.descripcion_seccion3">
+      
+        <label>Left box</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.caja1_seccion3"
+          name="caja1_seccion3" id="caja1_seccion3" #caja1_seccion3="ngModel"></editor>           
+
+        <label>Button</label>
+        <input type="text" class="form-control" name="boton_caja1_seccion3" id="boton_caja1_seccion3" #boton_caja1_seccion3="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.boton_caja1_seccion3">
+        <label>Select File</label><br>
+        <input type="file" (change)="onUpload11($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent11 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <select class="form-control col-sm-3" name="file3" id ="file3" #file3="ngModel" [(ngModel)]="resourcesService.selectedResources.file3">
+          <option [value]="resourcesService.selectedResources.file3">Current file</option>
+          <option [value]="urlFile3 | async">New file</option>
+        </select>
+        <br>
+        <hr>
+      
+        <label>Right box</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.caja2_seccion3"
+          name="caja2_seccion3" id="caja2_seccion3" #caja2_seccion3="ngModel"></editor>           
+
+        <br>
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image5" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload5($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent5 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 856px x 451px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image5" id ="image5" #image5="ngModel" [(ngModel)]="resourcesService.selectedResources.image5">
+          <option [value]="resourcesService.selectedResources.image5">Current image</option>
+          <option [value]="urlImage5 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage5 | async">            
+          <img [src]="urlImage5 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+      
+        <label><b>Section 4</b></label><br>
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image6" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload6($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent6 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image6" id ="image6" #image6="ngModel" [(ngModel)]="resourcesService.selectedResources.image6">
+          <option [value]="resourcesService.selectedResources.image6">Current image</option>
+          <option [value]="urlImage6 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage6 | async">            
+          <img [src]="urlImage6 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja1_seccion4" id="titulo_caja1_seccion4" #titulo_caja1_seccion4="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja1_seccion4">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja1_seccion4"
+          name="descripcion_caja1_seccion4" id="descripcion_caja1_seccion4" #descripcion_caja1_seccion4="ngModel"></editor>           
+        <label>Link</label>
+        <input type="text" class="form-control" name="link_caja1_seccion4" id="link_caja1_seccion4" #link_caja1_seccion4="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.link_caja1_seccion4">
+        <label>Select File</label><br>
+        <input type="file" (change)="onUpload12($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent12 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <select class="form-control col-sm-3" name="file4" id ="file4" #file4="ngModel" [(ngModel)]="resourcesService.selectedResources.file4">
+          <option [value]="resourcesService.selectedResources.file4">Current file</option>
+          <option [value]="urlFile4 | async">New file</option>
+        </select>
+        <br>
+        <hr>
+
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image7" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload7($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent7 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image7" id ="image7" #image7="ngModel" [(ngModel)]="resourcesService.selectedResources.image7">
+          <option [value]="resourcesService.selectedResources.image7">Current image</option>
+          <option [value]="urlImage7 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage7 | async">            
+          <img [src]="urlImage7 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja2_seccion4" id="titulo_caja2_seccion4" #titulo_caja2_seccion4="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja2_seccion4">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja2_seccion4"
+          name="descripcion_caja2_seccion4" id="descripcion_caja2_seccion4" #descripcion_caja3_seccion2="ngModel"></editor>           
+        <label>Link</label>
+        <input type="text" class="form-control" name="link_caja2_seccion4" id="link_caja2_seccion4" #link_caja2_seccion4="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.link_caja2_seccion4">
+        <label>Select File</label><br>
+        <input type="file" (change)="onUpload13($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent13 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <select class="form-control col-sm-3" name="file5" id ="file5" #file5="ngModel" [(ngModel)]="resourcesService.selectedResources.file5">
+          <option [value]="resourcesService.selectedResources.file5">Current file</option>
+          <option [value]="urlFile5 | async">New file</option>
+        </select>
+        <br>
+        <hr>
+
+        <label>Current Image</label><br>
+        <img [src]="resourcesService.selectedResources.image8" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload8($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent8 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 512px x 512px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image8" id ="image8" #image8="ngModel" [(ngModel)]="resourcesService.selectedResources.image8">
+          <option [value]="resourcesService.selectedResources.image8">Current image</option>
+          <option [value]="urlImage8 | async">New image</option>
+        </select>
+        <div *ngIf="urlImage8 | async">            
+          <img [src]="urlImage8 | async" class="preview">  
+        </div>  
+        <br>
+        <hr>
+        <label>Title</label>
+        <input type="text" class="form-control" name="titulo_caja3_seccion4" id="titulo_caja3_seccion4" #titulo_caja3_seccion4="ngModel"
+        [(ngModel)]="resourcesService.selectedResources.titulo_caja3_seccion4">
+        <label>Description</label>
+        <editor [(ngModel)]="resourcesService.selectedResources.descripcion_caja3_seccion4"
+          name="descripcion_caja3_seccion4" id="descripcion_caja3_seccion4" #descripcion_caja3_seccion4="ngModel"></editor>           
+        <br>
+      
+      </div>
+
+  </div>
+
+</form>

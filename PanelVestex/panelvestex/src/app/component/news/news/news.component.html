@@ -1,0 +1,75 @@
+<br>
+<h1 class="text-center titulo">Edit News</h1>
+<br>
+<form #newsForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(newsForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>  
+
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="newsService.selectedNews.$keyRegistro">
+      
+        <label><b>Title</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+          [(ngModel)]="newsService.selectedNews.titulo">
+        
+        <label><b>Current Image 1</b></label><br>
+        <img [src]="newsService.selectedNews.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">  
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div>
+        <label>Selected Image <strong>(Recommended image size: 1600px x 325px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="newsService.selectedNews.image1">
+          <option [value]="newsService.selectedNews.image1">Current image</option>
+          <option [value]="urlImage | async">New image</option>
+        </select>
+        <div *ngIf="urlImage | async">        
+          <img [src]="urlImage | async" class="preview">
+        </div>              
+        <br>
+      
+        <label><b>Section 2 - Title</b></label>
+        <input type="text" class="form-control" name="parte2_titulo" id="parte2_titulo" #parte2_titulo="ngModel"
+          [(ngModel)]="newsService.selectedNews.parte2_titulo">
+        <br>
+      
+        <label><b>Section 2 - Title 2</b></label>
+        <input type="text" class="form-control" name="parte2_titulo_2" id="parte2_titulo_2" #parte2_titulo_2="ngModel"
+          [(ngModel)]="newsService.selectedNews.parte2_titulo_2">   
+        <br>
+      
+        <label><b>Section 3 - Title</b></label>
+        <input type="text" class="form-control" name="parte3_titulo" id="parte3_titulo" #parte3_titulo="ngModel"
+          [(ngModel)]="newsService.selectedNews.parte3_titulo">
+        <br>
+      
+        <label><b>Section 3 - Title 2</b></label>
+        <input type="text" class="form-control" name="parte3_titulo_2" id="parte3_titulo_2" #parte3_titulo_2="ngModel"
+          [(ngModel)]="newsService.selectedNews.parte3_titulo_2">
+        <br>
+      
+        <label><b>Section 4 - Title</b></label>
+        <input type="text" class="form-control" name="parte4_titulo" id="parte4_titulo" #parte4_titulo="ngModel"
+          [(ngModel)]="newsService.selectedNews.parte4_titulo">
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

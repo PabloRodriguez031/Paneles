@@ -1,0 +1,27 @@
+<br><br>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered fixed">
+
+            <tr *ngFor="let homelista of homeList">
+              <td>Edit Home</td>
+              <td>
+                <button type="button" (click)="onEdit(homelista)" class="btn btn-outline-danger btn-sm">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          
+          </table>
+    </div>
+
+    
+
+    <div class="col-md-9" *ngIf="mostrarForm">
+      <app-home></app-home>
+    </div>
+  </div>
+</div>
+

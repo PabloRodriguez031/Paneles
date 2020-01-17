@@ -1,0 +1,39 @@
+<br>
+<h1 class="text-center titulo">Edit Directory</h1>
+<br>
+<form #directoryForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(directoryForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>  
+
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="directoryService.selectedDirectory.$keyRegistro">
+      
+        <label for="nombre"><b>Title</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+          [(ngModel)]="directoryService.selectedDirectory.titulo">
+        <br>
+      
+        <label for="telefono"><b>Section 2</b></label>
+        <input type="text" class="form-control" name="categoria" id="categoria" #categoria="ngModel"
+          [(ngModel)]="directoryService.selectedDirectory.categoria">
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

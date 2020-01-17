@@ -1,0 +1,21 @@
+li a:hover{
+    cursor: pointer;
+}
+
+.estilo{
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+
+.dropdown-toggle{
+    color: rgba(0,0,0,.5);
+}
+
+.dropdown-item{
+    cursor: pointer;
+}
+
+.dropdown-item:active{
+    background-color: #fff;    
+}

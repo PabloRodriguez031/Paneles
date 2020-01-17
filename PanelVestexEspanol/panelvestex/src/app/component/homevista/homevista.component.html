@@ -1,0 +1,40 @@
+<div *ngFor="let homelista of homeList" class="container">
+  
+  <h2>Parte 1</h2>
+  <div class="row">
+    <p [innerHTML]="homelista.parte1"></p>
+  </div>
+
+  <h2>Parte 2</h2>
+  <div class="row">
+    <div class="col-sm-4">{{homelista.parte2}}</div>
+    <div class="col-sm-4">{{homelista.parte2_2}}</div>
+    <div class="col-sm-4">{{homelista.parte2_2_2}}</div>
+  </div>
+
+  <h2>Parte 3</h2>
+  <div class="row">
+    <div class="col-sm-4">{{homelista.parte3}}</div>
+    <div class="col-sm-4">{{homelista.parte3_3}}</div>
+    <div class="col-sm-4">{{homelista.parte3_3_3}}</div>
+    <div class="col-sm-6">{{homelista.parte3_3_3_3}}</div>
+    <div class="col-sm-6">{{homelista.parte3_3_3_3_3}}</div>
+  </div>
+
+  <h2>Parte 4</h2>
+  <div class="row">
+    <div class="col-sm-12">{{homelista.parte4}}</div>
+  </div>
+
+
+  <h2>Parte 5</h2>
+  <div class="row">
+    <div class="col-sm-12">{{homelista.parte5}}</div>
+  </div>
+
+  <h2>Parte 6</h2>
+  <div class="row">
+    <div class="col-sm-12">{{homelista.parte6}}</div>
+  </div>
+
+</div>

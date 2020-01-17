@@ -1,0 +1,101 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Panel Vestex</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <div class="navbar-nav">
+      </div>
+
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light estilo">
+      <a class="navbar-brand" href="#">Panel Vestex</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngFor="let homelista of homeList">
+            <a class="nav-item nav-link" (click)="onSelect('Home'); onEditHome(homelista)">Inicio</a>
+          </li>
+
+          <div class="dropdown show">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Acerca de
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <div *ngFor="let aboutlista of aboutList">
+                <a class="dropdown-item" (click)="onSelect('About'); onEditAbout(aboutlista)">Quienes somos</a>
+              </div>
+              <div *ngFor="let statisticslista of statisticsList">
+                <a class="dropdown-item" (click)="onSelect('Statistics'); onEditStatistics(statisticslista)">Estadísticas</a>
+              </div>  
+              <div *ngFor="let tradelista of tradeList">
+                <a class="dropdown-item" (click)="onSelect('Trade'); onEditTrade(tradelista)">Acuerdos</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown show">
+              <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Servicios
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div *ngFor="let servicelista of serviceList">
+                  <a class="dropdown-item" (click)="onSelect('Service'); onEditService(servicelista)">Servicios</a>
+                </div>
+                <div *ngFor="let funtejerlista of funtejerList">
+                    <a class="dropdown-item" (click)="onSelect('Funtejer'); onEditFuntejer(funtejerlista)">Funtejer</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Academia
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <div *ngFor="let academylista of academyList">
+                      <a class="dropdown-item" (click)="onSelect('Academy'); onEditAcademy(academylista)">Academia</a>
+                  </div>
+                  <div *ngFor="let librarylista of libraryList">
+                      <a class="dropdown-item" (click)="onSelect('Library'); onEditLibrary(librarylista)">Biblioteca</a>
+                  </div>
+                </div>
+              </div>
+          
+          <li class="nav-item" *ngFor="let directorylista of directoryList">
+            <a class="nav-item nav-link" (click)="onSelect('Directory'); onEditDirectory(directorylista)">Directorio</a>
+            </li>
+          <li class="nav-item" *ngFor="let newslista of newsList">
+            <a class="nav-item nav-link" (click)="onSelect('News'); onEditNews(newslista)">Noticias</a>
+            </li>
+          <li class="nav-item" *ngFor="let contactlista of contactList">
+            <a class="nav-item nav-link" (click)="onSelect('Contact'); onEditContact(contactlista)">Contacto</a>
+          </li>
+          <li class="nav-item" *ngFor="let productslista of productsList">
+            <a class="nav-item nav-link" (click)="onSelect('Products'); onEditProducts(productslista)">Productos</a>
+          </li>        
+          <li class="nav-item" *ngFor="let sponsorlista of sponsorList">
+            <a class="nav-item nav-link" (click)="onSelect('Sponsor'); onEditSponsor(sponsorlista)">Patrocinadores</a>
+          </li>
+          <li class="nav-item" *ngFor="let navbarlista of navbarList">
+            <a class="nav-item nav-link" (click)="onSelect('Menu'); onEditNavbar(navbarlista)">Menu</a>      
+          </li> 
+          <li class="nav-item" *ngFor="let footerlista of footerList">
+            <a class="nav-item nav-link"(click)="onSelect('Footer'); onEditFooter(footerlista)">Footer</a> 
+          </li>                
+          <li class="nav-item">
+            <a class="nav-item nav-link" target="_blank" href="http://urbandelivery.info/panelvestexJOSE/">Boletín</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a class="nav-item nav-link" href="#" (click)="logout()">Cerrar sesión</a>    
+        </span>
+      </div>
+    </nav>

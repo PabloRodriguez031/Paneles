@@ -1,0 +1,112 @@
+<br>
+<h1 class="text-center titulo">Editar Contacto</h1>
+<br>
+<form #contactForm="ngForm">
+
+  <div class="row">
+
+    <div class="col-md-3 col-md-offset-1">
+      <div class="fixed col-md-2">              
+        <div class="text-center boton">
+            <div class="btn-group btn-group-sm  text-center">
+              <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(contactForm)">
+                Guardar Cambios
+              </button>        
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="contactService.selectedContact.$keyRegistro">
+      
+        <label><b>Slider</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+        [(ngModel)]="contactService.selectedContact.titulo">
+        <label>Imagen Actual 1</label><br>
+        <img [src]="contactService.selectedContact.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 1280px x 451px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="contactService.selectedContact.image1">
+          <option [value]="contactService.selectedContact.image1">Imagen Actual</option>
+          <option [value]="urlImage | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage | async">
+          <img [src]="urlImage | async" class="preview">  
+        </div>
+        <br>
+        <hr>
+      
+        <label><b>Sección 1</b></label><br>
+        <label>Titulo</label>
+        <input type="text" class="form-control" name="titulo_seccion1" id="titulo_seccion1" #titulo_seccion1="ngModel"
+        [(ngModel)]="contactService.selectedContact.titulo_seccion1">
+        
+        <label>Caja derecha</label>
+        <editor [(ngModel)]="contactService.selectedContact.app_caja1_seccion1" 
+        name="app_caja1_seccion1" id="app_caja1_seccion1" #app_caja1_seccion1="ngModel"></editor>    
+              
+        <input type="text" class="form-control" name="redes_caja1_seccion1" id="redes_caja1_seccion1" #redes_caja1_seccion1="ngModel"
+        [(ngModel)]="contactService.selectedContact.redes_caja1_seccion1">
+      
+        <label><b>Sección 2</b></label><br>
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre_caja1_seccion2" id="nombre_caja1_seccion2" #nombre_caja1_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.nombre_caja1_seccion2">
+        <label>Puesto</label>
+        <input type="text" class="form-control" name="puesto_caja1_seccion2" id="puesto_caja1_seccion2" #puesto_caja1_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.puesto_caja1_seccion2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="correo_caja1_seccion2" id="correo_caja1_seccion2" #correo_caja1_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.correo_caja1_seccion2">
+        <label>Link email</label>
+        <input type="text" class="form-control" name="email_caja1_seccion2" id="email_caja1_seccion2" #email_caja1_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.email_caja1_seccion2">
+      
+        <br>
+      
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre_caja2_seccion2" id="nombre_caja2_seccion2" #nombre_caja2_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.nombre_caja2_seccion2">
+        <label>Puesto</label>
+        <input type="text" class="form-control" name="puesto_caja2_seccion2" id="puesto_caja2_seccion2" #puesto_caja2_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.puesto_caja2_seccion2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="correo_caja2_seccion2" id="correo_caja2_seccion2" #correo_caja2_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.correo_caja2_seccion2">
+        <label>Link email</label>
+        <input type="text" class="form-control" name="email_caja2_seccion2" id="email_caja2_seccion2" #email_caja2_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.email_caja2_seccion2">
+        <label>LinkedIn</label>
+        <input type="text" class="form-control" name="linkedin_caja2_seccion2" id="linkedin_caja2_seccion2" #linkedin_caja2_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.linkedin_caja2_seccion2">
+      
+        <br>
+      
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre_caja3_seccion2" id="nombre_caja3_seccion2" #nombre_caja3_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.nombre_caja3_seccion2">
+        <label>Puesto</label>
+        <input type="text" class="form-control" name="puesto_caja3_seccion2" id="puesto_caja3_seccion2" #puesto_caja3_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.puesto_caja3_seccion2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="correo_caja3_seccion2" id="correo_caja3_seccion2" #correo_caja3_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.correo_caja3_seccion2">
+        <label>Link email</label>
+        <input type="text" class="form-control" name="email_caja3_seccion2" id="email_caja3_seccion2" #email_caja3_seccion2="ngModel"
+        [(ngModel)]="contactService.selectedContact.email_caja3_seccion2">  
+        <br>
+
+    </div>
+    
+  </div>
+
+
+</form>

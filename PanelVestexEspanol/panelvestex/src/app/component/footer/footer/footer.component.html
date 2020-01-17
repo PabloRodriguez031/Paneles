@@ -1,0 +1,71 @@
+<br>
+<h1 class="text-center titulo">Editar Footer</h1>
+<br>
+<form #footerForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(footerForm)">
+                    Guardar Cambios
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+        
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+          [(ngModel)]="footerService.selectedFooter.$keyRegistro">
+        <label><b>Footer 1</b></label>
+        <input type="text" class="form-control" name="titulo1" id="titulo1" #titulo1="ngModel"
+          [(ngModel)]="footerService.selectedFooter.titulo1">
+        <br>
+        <label><b>Links Descripción 1</b></label>
+        <input type="text" class="form-control" name="desc1" id="desc1" #desc1="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc1">
+        <input type="text" class="form-control" name="desc1_2" id="desc1_2" #desc1_2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc1_2">
+        <input type="text" class="form-control" name="desc1_3" id="desc1_3" #desc1_3="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc1_3">
+        <input type="text" class="form-control" name="desc1_4" id="desc1_4" #desc1_4="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc1_4">
+        <br>
+      
+        <label><b>Footer 2</b></label>
+        <input type="text" class="form-control" name="titulo2" id="titulo2" #titulo2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.titulo2">
+        <br>
+        <label><b>Links Descripción 2</b></label>
+        <input type="text" class="form-control" name="desc2" id="desc2" #desc2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc2">
+        <input type="text" class="form-control" name="desc2_2" id="submenu2_2" #desc2_2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc2_2">
+        <input type="text" class="form-control" name="desc2_3" id="desc2_3" #desc2_3="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc2_3">
+        <input type="text" class="form-control" name="desc2_4" id="desc2_4" #desc2_4="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc2_4">
+        <br>
+      
+        <label><b>Footer 3</b></label>
+        <input type="text" class="form-control" name="titulo3" id="titulo3" #titulo3="ngModel"
+          [(ngModel)]="footerService.selectedFooter.titulo3">
+        <br>
+        <label><b>Links 3</b></label>
+        <input type="text" class="form-control" name="desc3" id="desc3" #desc3="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc3">
+        <input type="text" class="form-control" name="desc3_2" id="desc3_2" #desc3_2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc3_2">
+        <input type="text" class="form-control" name="desc3_3" id="desc3_3" #desc3_3="ngModel"
+          [(ngModel)]="footerService.selectedFooter.desc3_3">
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

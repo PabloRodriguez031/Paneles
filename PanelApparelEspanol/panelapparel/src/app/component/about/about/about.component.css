@@ -1,0 +1,9 @@
+textarea {
+    height: 100px;
+}
+
+.preview{
+    width: 15%;
+    height: 15%;
+    margin: 10px 0;
+}

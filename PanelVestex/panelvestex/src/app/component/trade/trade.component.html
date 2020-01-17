@@ -1,0 +1,101 @@
+<br>
+<h1 class="text-center titulo">Edit Trade</h1>
+<br>
+<form #tradeForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(tradeForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div> 
+        
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="tradeService.selectedTrade.$keyRegistro">
+      
+        <label><b>Title 1</b></label>
+        <input type="text" class="form-control" name="titulo1" id="titulo1" #titulo1="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo1">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc1"
+        name="desc1" id="desc1" #desc1="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 2</b></label>
+        <input type="text" class="form-control" name="titulo2" id="titulo2" #titulo2="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo2">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc2"
+        name="desc2" id="desc2" #desc2="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 3</b></label>
+        <input type="text" class="form-control" name="titulo3" id="titulo3" #titulo3="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo3">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc3"
+        name="desc3" id="desc3" #desc3="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 4</b></label>
+        <input type="text" class="form-control" name="titulo4" id="titulo4" #titulo4="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo4">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc4"
+        name="desc4" id="desc4" #desc4="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 5</b></label>
+        <input type="text" class="form-control" name="titulo5" id="titulo5" #titulo5="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo5">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc5"
+        name="desc5" id="desc5" #desc5="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 6</b></label>
+        <input type="text" class="form-control" name="titulo6" id="titulo6" #titulo6="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo6">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc6"
+        name="desc6" id="desc6" #desc6="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 7</b></label>
+        <input type="text" class="form-control" name="titulo7" id="titulo7" #titulo7="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo7">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc7"
+        name="desc7" id="desc7" #desc7="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 8</b></label>
+        <input type="text" class="form-control" name="titulo8" id="titulo8" #titulo8="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo8">
+        <br>
+        <editor [(ngModel)]="tradeService.selectedTrade.desc8"
+        name="desc8" id="desc8" #desc8="ngModel"></editor>        
+        <br>
+
+        <label><b>Title 9</b></label>
+        <input type="text" class="form-control" name="titulo9" id="titulo9" #titulo9="ngModel"
+          [(ngModel)]="tradeService.selectedTrade.titulo9">
+        <br> 
+        <editor [(ngModel)]="tradeService.selectedTrade.desc9"
+        name="desc9" id="desc9" #desc9="ngModel"></editor>         
+        <br>            
+
+      </div>
+
+  </div>
+
+</form>

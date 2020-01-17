@@ -1,0 +1,34 @@
+<br>
+<h1 class="text-center titulo">Edit Library</h1>
+<br>
+<form #libraryForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(libraryForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>  
+
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="libraryService.selectedLibrary.$keyRegistro">
+      
+        <label for="nombre"><b>Title</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+          [(ngModel)]="libraryService.selectedLibrary.titulo">
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

@@ -1,0 +1,27 @@
+<br><br>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered">
+
+            <tr *ngFor="let aboutlista of aboutList">
+              <td>Edit About</td>
+              <td>
+                <button type="button" (click)="onEdit(aboutlista)" class="btn btn-outline-danger btn-sm">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          
+          </table>
+    </div>
+
+    
+
+    <div class="col-md-9" *ngIf="mostrarForm">
+      <app-about></app-about>
+    </div>
+  </div>
+</div>
+

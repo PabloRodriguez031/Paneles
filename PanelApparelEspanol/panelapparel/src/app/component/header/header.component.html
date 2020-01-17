@@ -1,0 +1,49 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Panel Vestex</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <div class="navbar-nav">
+      </div>
+
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light estilo">
+      <a class="navbar-brand" href="#">Panel Apparel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngFor="let homelista of homeList">
+            <a class="nav-item nav-link" (click)="onSelect('Home'); onEditHome(homelista)">Inicio</a>
+          </li>
+          <li class="nav-item" *ngFor="let showlista of showList">
+             <a class="nav-item nav-link" (click)="onSelect('Show'); onEditShow(showlista)">Exposición</a>
+          </li>
+          <li class="nav-item" *ngFor="let resourceslista of resourcesList">
+            <a class="nav-item nav-link" (click)="onSelect('Resources'); onEditResources(resourceslista)">Recursos</a>
+         </li>
+         <li class="nav-item" *ngFor="let registrationlista of registrationList">
+          <a class="nav-item nav-link" (click)="onSelect('Registration'); onEditRegistration(registrationlista)">Registro</a>
+        </li>
+        <li class="nav-item" *ngFor="let contactlista of contactList">
+          <a class="nav-item nav-link" (click)="onSelect('Contact'); onEditContact(contactlista)">Contacto</a>
+        </li>
+        <li class="nav-item" *ngFor="let sponsorlista of sponsorList">
+          <a class="nav-item nav-link" (click)="onSelect('Sponsor'); onEditSponsor(sponsorlista)">Patrocinadores</a>
+        </li>
+        <li class="nav-item" *ngFor="let navbarlista of navbarList">
+          <a class="nav-item nav-link" (click)="onSelect('Menu'); onEditNavbar(navbarlista)">Menu</a>      
+        </li> 
+        <li class="nav-item" *ngFor="let footerlista of footerList">
+          <a class="nav-item nav-link" (click)="onSelect('Footer'); onEditFooter(footerlista)">Footer</a> 
+        </li>            
+        </ul>
+        <span class="navbar-text">
+          <a class="nav-item nav-link" href="#" (click)="logout()">Cerrar sesión</a>    
+        </span>
+      </div>
+    </nav>

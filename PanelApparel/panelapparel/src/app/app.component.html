@@ -1,0 +1,77 @@
+<div *ngIf="authService.user | async">  
+
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+
+<div class="sidenav">
+  <a href="http://urbandelivery.info/panelapparel/es/"><img src="http://urbandelivery.info/vestexweb/images/spain.png"></a>    
+</div>
+
+<div class="wrap">
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <app-home *ngIf="loadedFeature === 'Home'"></app-home>
+    </div>
+
+    <div class="col-md-12">
+      <app-show *ngIf="loadedFeature === 'Show'"></app-show>
+    </div> 
+    
+    <div class="col-md-12">
+      <app-resources *ngIf="loadedFeature === 'Resources'"></app-resources>
+    </div>  
+
+    <div class="col-md-12">
+      <app-registration *ngIf="loadedFeature === 'Registration'"></app-registration>
+    </div>  
+ 
+    <div class="col-md-12">
+      <app-contact *ngIf="loadedFeature === 'Contact'"></app-contact>
+    </div>  
+
+    <div class="col-md-12">
+      <app-sponsor *ngIf="loadedFeature === 'Sponsor'"></app-sponsor>
+    </div> 
+
+    <div class="col-md-12">
+        <app-navbar *ngIf="loadedFeature === 'Menu'"></app-navbar>
+    </div>
+   
+    <div class="col-md-12">
+        <app-footer *ngIf="loadedFeature === 'Footer'"></app-footer>
+    </div>
+   
+  </div>
+
+</div>
+
+</div>
+
+<div *ngIf="!(authService.user | async)">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2>Panel Apparel</h2>
+        <!-- Login Form -->
+          <input type="text" id="login" class="fadeI  second" [(ngModel)]="email" placeholder="email">
+          <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" placeholder="password">
+          <button (click)="login()" class="fadeIn fourth" [disabled]="!email || !password">
+            Login
+          </button>
+    
+      </div>
+    </div>
+
+</div>
+
+
+
+
+

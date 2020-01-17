@@ -1,0 +1,394 @@
+<br>
+<h1 class="text-center titulo">Editar Patrocinadores</h1>
+<br>
+<form #sponsorForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(sponsorForm)">
+                    Guardar Cambios
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.$keyRegistro">
+      
+        <label><b>Titulo</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.titulo">
+        <br>
+    
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image1">
+          <option [value]="sponsorService.selectedSponsor.image1">Imagen Actual</option>
+          <option [value]="urlImage | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage | async">            
+          <img [src]="urlImage | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image2" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image2">
+          <option [value]="sponsorService.selectedSponsor.image2">Imagen Actual</option>
+          <option [value]="urlImage2 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage2 | async">                        
+          <img [src]="urlImage2 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image3" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload3($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent3 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image3" id ="image3" #image3="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image3">
+          <option [value]="sponsorService.selectedSponsor.image3">Imagen Actual</option>
+          <option [value]="urlImage3 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage3 | async">                        
+          <img [src]="urlImage3 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image4" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload4($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent4 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image4" id ="image4" #image4="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image4">
+          <option [value]="sponsorService.selectedSponsor.image4">Imagen Actual</option>
+          <option [value]="urlImage4 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage4 | async">                        
+          <img [src]="urlImage4 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image5" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload5($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent5 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image5" id ="image5" #image5="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image5">
+          <option [value]="sponsorService.selectedSponsor.image5">Imagen Actual</option>
+          <option [value]="urlImage5 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage5 | async">                        
+          <img [src]="urlImage5 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image6" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload6($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent6 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image6" id ="image6" #image6="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image6">
+          <option [value]="sponsorService.selectedSponsor.image6">Imagen Actual</option>
+          <option [value]="urlImage6 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage6 | async">                        
+          <img [src]="urlImage6 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image7" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload7($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent7 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image7" id ="image7" #image7="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image7">
+          <option [value]="sponsorService.selectedSponsor.image7">Imagen Actual</option>
+          <option [value]="urlImage7 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage7 | async">                        
+          <img [src]="urlImage7 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image8" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload8($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent8 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image8" id ="image8" #image8="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image8">
+          <option [value]="sponsorService.selectedSponsor.image8">Imagen Actual</option>
+          <option [value]="urlImage8 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage8 | async">                        
+          <img [src]="urlImage8 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image9" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link1" id="link1" #link1="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link1">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload9($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent9 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image9" id ="image9" #image9="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image9">
+          <option [value]="sponsorService.selectedSponsor.image9">Imagen Actual</option>
+          <option [value]="urlImage9 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage9 | async">                        
+          <img [src]="urlImage9 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image10" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link2" id="link2" #link2="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link2">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload10($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent10 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image10" id ="image10" #image10="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image10">
+          <option [value]="sponsorService.selectedSponsor.image10">Imagen Actual</option>
+          <option [value]="urlImage10 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage10 | async">                        
+          <img [src]="urlImage10 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image11" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link3" id="link3" #link3="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link3">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload11($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent11 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image11" id ="image11" #image11="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image11">
+          <option [value]="sponsorService.selectedSponsor.image11">Imagen Actual</option>
+          <option [value]="urlImage11 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage11 | async">                        
+          <img [src]="urlImage11 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image12" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link4" id="link4" #link4="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link4">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload12($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent12 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image12" id ="image12" #image12="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image12">
+          <option [value]="sponsorService.selectedSponsor.image12">Imagen Actual</option>
+          <option [value]="urlImage12 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage12 | async">                        
+          <img [src]="urlImage12 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image13" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link5" id="link5" #link5="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link5">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload13($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent13 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image13" id ="image13" #image13="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image13">
+          <option [value]="sponsorService.selectedSponsor.image13">Imagen Actual</option>
+          <option [value]="urlImage13 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage13 | async">                        
+          <img [src]="urlImage13 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image14" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link6" id="link6" #link6="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link6">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload14($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent14 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image14" id ="image14" #image14="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image14">
+          <option [value]="sponsorService.selectedSponsor.image14">Imagen Actual</option>
+          <option [value]="urlImage14 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage14 | async">                        
+          <img [src]="urlImage14 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image15" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link7" id="link7" #link7="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link7">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload15($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent15 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image15" id ="image15" #image15="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image15">
+          <option [value]="sponsorService.selectedSponsor.image15">Imagen Actual</option>
+          <option [value]="urlImage15 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage15 | async">                        
+          <img [src]="urlImage15 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image16" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link8" id="link8" #link8="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link8">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload16($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent16 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image16" id ="image16" #image16="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image16">
+          <option [value]="sponsorService.selectedSponsor.image16">Imagen Actual</option>
+          <option [value]="urlImage16 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage16 | async">                        
+          <img [src]="urlImage16 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+
+        <label>Imagen Actual</label><br>
+        <img [src]="sponsorService.selectedSponsor.image17" class="preview">
+        <br>
+        <label><b>Link</b></label>
+        <input type="text" class="form-control" name="link9" id="link9" #link9="ngModel"
+        [(ngModel)]="sponsorService.selectedSponsor.link9">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload17($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent17 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 150px x 144px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image17" id ="image17" #image17="ngModel" [(ngModel)]="sponsorService.selectedSponsor.image17">
+          <option [value]="sponsorService.selectedSponsor.image17">Imagen Actual</option>
+          <option [value]="urlImage17 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage17 | async">                        
+          <img [src]="urlImage17 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+
+      </div>      
+
+  </div>
+
+</form>

@@ -1,0 +1,165 @@
+<br>
+<h1 class="text-center titulo">Edit Service</h1>
+<br>
+<form #serviceForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(serviceForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="col-md-9">
+
+        <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+        [(ngModel)]="serviceService.selectedService.$keyRegistro">
+      
+        <label><b>Title</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.titulo">
+      
+        <label><b>Current Image 1</b></label><br>
+        <img [src]="serviceService.selectedService.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div>
+        <label>Selected Image <strong>(Recommended image size: 1280px x 261px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="serviceService.selectedService.image1">
+          <option [value]="serviceService.selectedService.image1">Current image</option>
+          <option [value]="urlImage | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage | async">        
+          <img [src]="urlImage | async" class="preview">
+        </div>  
+        <br>
+      
+        <label><b>Section 2 - Title</b></label>
+        <input type="text" class="form-control" name="parte2_titulo" id="parte2_titulo" #parte2_titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.parte2_titulo">        
+        <editor [(ngModel)]="serviceService.selectedService.parte2_2"
+        name="parte2_2" id="parte2_2" #parte2_2="ngModel"></editor>    
+        <br>
+      
+        <label><b>Section 3 - Title</b></label>
+        <input type="text" class="form-control" name="parte3_titulo" id="parte3_titulo" #parte3_titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.parte3_titulo">        
+        <editor [(ngModel)]="serviceService.selectedService.parte3"
+        name="parte3" id="parte3" #parte3="ngModel"></editor>
+        <label><b>Inside Information</b></label>
+        <editor [(ngModel)]="serviceService.selectedService.service1"
+        name="service1" id="service1" #service1="ngModel"></editor>
+        
+        <label><b>Current Image 2</b></label><br>
+        <img [src]="serviceService.selectedService.image2" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+        </div> 
+        <label>Selected Image <strong>(Recommended image size: 800px x 442px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="serviceService.selectedService.image2">
+          <option [value]="serviceService.selectedService.image2">Current image</option>
+          <option [value]="urlImage2 | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage2 | async">                    
+          <img [src]="urlImage2 | async" class="preview">  
+        </div>    
+        <br>        
+      
+        <label><b>Section 3 - Title 2</b></label>
+        <input type="text" class="form-control" name="parte3_3_titulo" id="parte3_3_titulo" #parte3_3_titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.parte3_3_titulo">        
+        <editor [(ngModel)]="serviceService.selectedService.parte3_3"
+        name="parte3_3" id="parte3_3" #parte3_3="ngModel"></editor>
+        <label><b>Inside Information</b></label>
+        <editor [(ngModel)]="serviceService.selectedService.service2"
+        name="service2" id="service2" #service2="ngModel"></editor>
+
+        <label><b>Current Image 3</b></label><br>
+        <img [src]="serviceService.selectedService.image3" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload3($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent3 | async) +'%'"></div>
+        </div>  
+        <label>Selected Image <strong>(Recommended image size: 800px x 442px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image3" id ="image3" #image3="ngModel" [(ngModel)]="serviceService.selectedService.image3">
+          <option [value]="serviceService.selectedService.image3">Current image</option>
+          <option [value]="urlImage3 | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage3 | async">                    
+          <img [src]="urlImage3 | async" class="preview">  
+        </div>    
+        <br>
+      
+        <label><b>Section 3 - Title 3</b></label>
+        <input type="text" class="form-control" name="parte3_3_3_titulo" id="parte3_3_3_titulo" #parte3_3_3_titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.parte3_3_3_titulo">        
+        <editor [(ngModel)]="serviceService.selectedService.parte3_3_3"
+        name="parte3_3_3" id="parte3_3_3" #parte3_3_3="ngModel"></editor>
+        <label><b>Inside Information</b></label>
+        <editor [(ngModel)]="serviceService.selectedService.service3"
+        name="service3" id="service3" #service3="ngModel"></editor>
+
+        <label><b>Current Image 4</b></label><br> 
+        <img [src]="serviceService.selectedService.image4" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload4($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent4 | async) +'%'"></div>
+        </div>  
+        <label>Selected Image <strong>(Recommended image size: 800px x 442px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image4" id ="image4" #image4="ngModel" [(ngModel)]="serviceService.selectedService.image4">
+          <option [value]="serviceService.selectedService.image4">Current image</option>
+          <option [value]="urlImage4 | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage4 | async">                    
+          <img [src]="urlImage4 | async" class="preview">  
+        </div>    
+        <br>
+      
+        <label><b>Section 3 - Title 4</b></label>
+        <input type="text" class="form-control" name="parte3_3_3_3_titulo" id="parte3_3_3_3_titulo" #parte3_3_3_3_titulo="ngModel"
+          [(ngModel)]="serviceService.selectedService.parte3_3_3_3_titulo">        
+        <editor [(ngModel)]="serviceService.selectedService.parte3_3_3_3"
+        name="parte3_3_3_3" id="parte3_3_3_3" #parte3_3_3_3="ngModel"></editor>
+        <label><b>Inside Information</b></label>
+        <editor [(ngModel)]="serviceService.selectedService.service4"
+        name="service4" id="service4" #service4="ngModel"></editor>
+
+        <label><b>Current Image 5</b></label><br>
+        <img [src]="serviceService.selectedService.image5" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload5($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent5 | async) +'%'"></div>
+        </div>  
+        <label>Selected Image <strong>(Recommended image size: 800px x 442px)</strong></label><br> 
+        <select class="form-control col-sm-3" name="image5" id ="image5" #image5="ngModel" [(ngModel)]="serviceService.selectedService.image5">
+          <option [value]="serviceService.selectedService.image5">Current image</option>
+          <option [value]="urlImage5 | async">New image</option>
+        </select> 
+        <div *ngIf="urlImage5 | async">                    
+          <img [src]="urlImage5 | async" class="preview">  
+        </div>  
+        <br>
+
+        <label><b>Title for the form</b></label>
+        <input type="text" class="form-control" name="title_form" id="title_form" #title_form="ngModel"
+          [(ngModel)]="serviceService.selectedService.title_form"> 
+        <br>
+      </div>
+
+  </div>
+
+</form>

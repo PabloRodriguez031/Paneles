@@ -1,0 +1,106 @@
+<div *ngIf="authService.user | async">  
+
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+
+<!-- Side navigation -->
+<div class="sidenav">
+  <a href="http://urbandelivery.info/panelvestexv2/es/"><img src="http://urbandelivery.info/vestexweb/images/spain.png"></a>    
+</div>
+
+<div class="wrap">
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <app-home *ngIf="loadedFeature === 'Home'"></app-home>
+    </div>
+
+    <div class="col-md-12">
+        <app-about *ngIf="loadedFeature === 'About'"></app-about>
+    </div>
+
+    <div class="col-md-12">
+      <app-service *ngIf="loadedFeature === 'Service'"></app-service>
+    </div>
+  
+    <div class="col-md-12">
+      <app-academy *ngIf="loadedFeature === 'Academy'"></app-academy>
+    </div>
+
+    <div class="col-md-12">
+      <app-library *ngIf="loadedFeature === 'Library'"></app-library>
+    </div>
+
+    <div class="col-md-12">
+      <app-directory *ngIf="loadedFeature === 'Directory'"></app-directory>
+    </div>
+    
+    <div class="col-md-12">
+        <app-news *ngIf="loadedFeature === 'News'"></app-news>
+    </div>
+
+    <div class="col-md-12">
+      <app-contact *ngIf="loadedFeature === 'Contact'"></app-contact>
+    </div>
+
+    <div class="col-md-12">
+      <app-products *ngIf="loadedFeature === 'Products'"></app-products>
+    </div>
+
+    <div class="col-md-12">
+      <app-statistics *ngIf="loadedFeature === 'Statistics'"></app-statistics>
+    </div>
+
+    <div class="col-md-12">
+      <app-trade *ngIf="loadedFeature === 'Trade'"></app-trade>
+    </div>
+
+    <div class="col-md-12">
+      <app-funtejer *ngIf="loadedFeature === 'Funtejer'"></app-funtejer>
+    </div>
+
+    <div class="col-md-12">
+      <app-sponsor *ngIf="loadedFeature === 'Sponsor'"></app-sponsor>
+    </div>
+ 
+    <div class="col-md-12">
+      <app-navbar *ngIf="loadedFeature === 'Menu'"></app-navbar>
+    </div>
+   
+    <div class="col-md-12">
+      <app-footer *ngIf="loadedFeature === 'Footer'"></app-footer>
+    </div>
+   
+  </div>
+
+</div>
+
+</div>
+
+<div *ngIf="!(authService.user | async)">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2>Panel Vestex</h2>
+        <!-- Login Form -->
+          <input type="text" id="login" class="fadeI  second" [(ngModel)]="email" placeholder="email">
+          <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" placeholder="password">
+          <button (click)="login()" class="fadeIn fourth" [disabled]="!email || !password">
+            Login
+          </button>
+    
+      </div>
+    </div>
+
+</div>
+
+
+
+
+

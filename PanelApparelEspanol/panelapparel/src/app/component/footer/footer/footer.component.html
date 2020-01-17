@@ -1,0 +1,114 @@
+<br>
+<h1 class="text-center titulo">Editar Footer</h1>
+<br>
+<form #footerForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(footerForm)">
+                    Guardar Cambios
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="col-md-9">
+
+          <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+          [(ngModel)]="footerService.selectedFooter.$keyRegistro">
+      
+        <label><b>Titulo</b></label>
+        <input type="text" class="form-control" name="titulo" id="titulo" #titulo="ngModel"
+          [(ngModel)]="footerService.selectedFooter.titulo">
+        <label>Descripción</label>
+        <input type="text" class="form-control" name="descripcion" id="descripcion" #descripcion="ngModel"
+          [(ngModel)]="footerService.selectedFooter.descripcion">
+        <label>Botón</label>
+        <input type="text" class="form-control" name="boton" id="boton" #boton="ngModel"
+          [(ngModel)]="footerService.selectedFooter.boton">
+        <br>
+      
+        <label><b>Sección 2</b></label><br>
+        <label>Titulo</label>
+        <input type="text" class="form-control" name="titulo_caja1_seccion2" id="titulo_caja1_seccion2" #titulo_caja1_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.titulo_caja1_seccion2">
+        <label>Link de Organizador</label>
+        <input type="text" class="form-control" name="link1_caja1_seccion2" id="link1_caja1_seccion2" #link1_caja1_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.link1_caja1_seccion2">
+        <label>Imagen Actual</label><br>
+        <img [src]="footerService.selectedFooter.image1" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 135px x 90px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="footerService.selectedFooter.image1">
+          <option [value]="footerService.selectedFooter.image1">Imagen Actual</option>
+          <option [value]="urlImage | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage | async">            
+          <img [src]="urlImage | async" class="preview">  
+        </div>         
+        <br>
+        <hr>
+      
+        <label>Link de Organizador</label>
+        <input type="text" class="form-control" name="link2_caja1_seccion2" id="link2_caja1_seccion2" #link2_caja1_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.link2_caja1_seccion2">
+        <label>Imagen Actual</label><br>
+        <img [src]="footerService.selectedFooter.image2" class="preview">
+        <br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload2($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Imagen Seleccionada <strong>(Tamaño recomendado para imagen: 135px x 90px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image2" id ="image2" #image2="ngModel" [(ngModel)]="footerService.selectedFooter.image2">
+          <option [value]="footerService.selectedFooter.image2">Imagen Actual</option>
+          <option [value]="urlImage2 | async">Imagen Nueva</option>
+        </select>
+        <div *ngIf="urlImage2 | async">                        
+          <img [src]="urlImage2 | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+        <br>
+      
+        <label>Link Facebook</label>
+        <input type="text" class="form-control" name="link1_caja2_seccion2" id="link1_caja2_seccion2" #link1_caja2_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.link1_caja2_seccion2">
+        <label>Link LinkedIn</label>
+        <input type="text" class="form-control" name="link2_caja2_seccion2" id="link2_caja2_seccion2" #link2_caja2_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.link2_caja2_seccion2">  
+        <br>
+        <input type="text" class="form-control" name="derechos_caja2_seccion2" id="derechos_caja2_seccion2" #derechos_caja2_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.derechos_caja2_seccion2">
+        <input type="text" class="form-control" name="descripcion_caja2_seccion2" id="descripcion_caja2_seccion2" #descripcion_caja2_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.descripcion_caja2_seccion2">
+        <br>
+      
+        <label>Contacto</label>
+        <input type="text" class="form-control" name="contacto_caja3_seccion2" id="contacto_caja3_seccion2" #contacto_caja3_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.contacto_caja3_seccion2">
+        <input type="text" class="form-control" name="numero_caja3_seccion2" id="numero_caja3_seccion2" #numero_caja3_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.numero_caja3_seccion2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="correo_caja3_seccion2" id="correo_caja3_seccion2" #correo_caja3_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.correo_caja3_seccion2">
+        <input type="text" class="form-control" name="email_caja3_seccion2" id="email_caja3_seccion2" #email_caja3_seccion2="ngModel"
+          [(ngModel)]="footerService.selectedFooter.email_caja3_seccion2">
+        <br>  
+
+      </div>
+
+  </div>
+
+</form>

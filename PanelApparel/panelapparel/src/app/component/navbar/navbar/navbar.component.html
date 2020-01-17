@@ -1,0 +1,108 @@
+<br>
+<h1 class="text-center titulo">Edit Menu</h1>
+<br>
+<form #navbarForm="ngForm">
+
+  <div class="row">
+
+      <div class="col-md-3 col-md-offset-1">
+          <div class="fixed col-md-2">              
+            <div class="text-center boton">
+                <div class="btn-group btn-group-sm  text-center">
+                  <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(navbarForm)">
+                    Save Changes
+                  </button>        
+                </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="col-md-9">
+
+          <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.$keyRegistro">
+      
+        <label><b>Logo</b></label><br>
+        <img [src]="navbarService.selectedNavbar.image1" class="preview">
+        <br><br>
+        <input type="file" accept=".jpeg, .jpg, .png" (change)="onUpload($event)"><br><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"></div>
+        </div> 
+        <br>     
+        <label>Selected Image <strong>(Recommended image size: 150px x 150px)</strong></label><br>
+        <select class="form-control col-sm-3" name="image1" id ="image1" #image1="ngModel" [(ngModel)]="navbarService.selectedNavbar.image1">
+          <option [value]="navbarService.selectedNavbar.image1">Current image</option>
+          <option [value]="urlImage | async">New image</option>
+        </select>
+        <br>
+        <div *ngIf="urlImage | async">            
+          <img [src]="urlImage | async" class="preview">  
+        </div> 
+        <br>
+        <hr>
+      
+        <label><b>Menu 1</b></label>
+        <input type="text" class="form-control" name="menu1" id="menu1" #menu1="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.menu1">
+        <label><b>SubMenu</b></label>
+        <input type="text" class="form-control" name="submenu1" id="submenu1" #submenu1="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu1">
+        <input type="text" class="form-control" name="submenu1_2" id="submenu1_2" #submenu1_2="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu1_2">
+        <input type="text" class="form-control" name="submenu1_3" id="submenu1_3" #submenu1_3="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu1_3">
+        <input type="text" class="form-control" name="submenu1_4" id="submenu1_4" #submenu1_4="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu1_4">
+        <br>
+      
+        <label for="nombre"><b>Menu 2</b></label>
+        <input type="text" class="form-control" name="menu2" id="menu2" #menu2="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.menu2">
+        <br>
+        <label for="nombre"><b>SubMenu 2</b></label>
+        <input type="text" class="form-control" name="submenu2" id="submenu2" #submenu2="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2">
+        <input type="text" class="form-control" name="submenu2_2" id="submenu2_2" #submenu2_2="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2_2">
+        <input type="text" class="form-control" name="submenu2_3" id="submenu2_3" #submenu2_3="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2_3">
+        <input type="text" class="form-control" name="submenu2_4" id="submenu2_4" #submenu2_4="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2_4">
+        <input type="text" class="form-control" name="submenu2_5" id="submenu2_5" #submenu2_5="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2_5">
+        <input type="text" class="form-control" name="submenu2_6" id="submenu2_6" #submenu2_6="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu2_6">
+        <br>
+      
+        <label for="nombre"><b>Menu 3</b></label>
+        <input type="text" class="form-control" name="menu3" id="menu3" #menu3="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.menu3">
+        <br>
+        <label for="nombre"><b>SubMenu 3</b></label>
+        <input type="text" class="form-control" name="submenu3" id="submenu3" #submenu3="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu3">
+        <input type="text" class="form-control" name="submenu3_2" id="submenu3_2" #submenu3_2="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu3_2">
+        <br>
+      
+        
+        <label for="nombre"><b>Menu 4</b></label>
+        <input type="text" class="form-control" name="menu4" id="menu4" #menu4="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.menu4">
+        <br>
+        <label for="nombre"><b>SubMenu 4</b></label>
+        <input type="text" class="form-control" name="submenu4" id="submenu4" #submenu4="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.submenu4">
+        <br>
+      
+        <label for="nombre"><b>Menu 5</b></label>
+        <input type="text" class="form-control" name="menu5" id="menu5" #menu5="ngModel"
+          [(ngModel)]="navbarService.selectedNavbar.menu5">
+        <br>
+
+      </div>
+
+  </div>
+
+</form>

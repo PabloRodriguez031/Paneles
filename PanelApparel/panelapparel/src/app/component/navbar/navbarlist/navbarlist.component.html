@@ -1,0 +1,31 @@
+<br><br>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3">              
+        <table class="table table-bordered">
+
+            <tr *ngFor="let navbarlist of navbarList">
+              <td>Edit Menu</td>
+              <td>
+                <button type="button" (click)="onEdit(navbarlist)" class="btn btn-outline-danger btn-sm">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          
+          </table>
+    </div>
+
+    <div class="col-md-9" *ngIf="mostrarForm">
+      <app-navbar></app-navbar>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Panel Vestex</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <div class="navbar-nav">
+      </div>
+
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light estilo">
+      <a class="navbar-brand" href="#">Panel Vestex</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngFor="let homelista of homeList">
+            <a class="nav-item nav-link" (click)="onSelect('Home'); onEditHome(homelista)">Home</a>
+          </li>
+          <li class="nav-item" *ngFor="let aboutlista of aboutList">
+             <a class="nav-item nav-link" (click)="onSelect('About'); onEditAbout(aboutlista)">About</a>
+          </li>
+          <li class="nav-item" *ngFor="let servicelista of serviceList">
+            <a class="nav-item nav-link" (click)="onSelect('Service'); onEditService(servicelista)">Service</a>
+          </li>
+          <li class="nav-item" *ngFor="let academylista of academyList">
+            <a class="nav-item nav-link" (click)="onSelect('Academy'); onEditAcademy(academylista)">Academy</a>
+          </li>
+          <li class="nav-item" *ngFor="let librarylista of libraryList">
+            <a class="nav-item nav-link" (click)="onSelect('Library'); onEditLibrary(librarylista)">Library</a>
+          </li>
+          <li class="nav-item" *ngFor="let directorylista of directoryList">
+            <a class="nav-item nav-link" (click)="onSelect('Directory'); onEditDirectory(directorylista)">Directory</a>
+            </li>
+          <li class="nav-item" *ngFor="let newslista of newsList">
+            <a class="nav-item nav-link" (click)="onSelect('News'); onEditNews(newslista)">News</a>
+            </li>
+          <li class="nav-item" *ngFor="let contactlista of contactList">
+            <a class="nav-item nav-link" (click)="onSelect('Contact'); onEditContact(contactlista)">Contact</a>
+          </li>
+          <li class="nav-item" *ngFor="let productslista of productsList">
+            <a class="nav-item nav-link" (click)="onSelect('Products'); onEditProducts(productslista)">Products</a>
+          </li>
+          <li class="nav-item" *ngFor="let statisticslista of statisticsList">
+            <a class="nav-item nav-link" (click)="onSelect('Statistics'); onEditStatistics(statisticslista)">Statistics</a>
+          </li>          
+          <li class="nav-item" *ngFor="let tradelista of tradeList">
+            <a class="nav-item nav-link" (click)="onSelect('Trade'); onEditTrade(tradelista)">Trade</a>
+          </li>
+          <li class="nav-item" *ngFor="let funtejerlista of funtejerList">
+            <a class="nav-item nav-link" (click)="onSelect('Funtejer'); onEditFuntejer(funtejerlista)">Funtejer</a>
+          </li>
+          <li class="nav-item" *ngFor="let sponsorlista of sponsorList">
+            <a class="nav-item nav-link" (click)="onSelect('Sponsor'); onEditSponsor(sponsorlista)">Sponsor</a>
+          </li>
+          <li class="nav-item" *ngFor="let navbarlista of navbarList">
+            <a class="nav-item nav-link" (click)="onSelect('Menu'); onEditNavbar(navbarlista)">Menu</a>      
+          </li> 
+          <li class="nav-item" *ngFor="let footerlista of footerList">
+            <a class="nav-item nav-link"(click)="onSelect('Footer'); onEditFooter(footerlista)">Footer</a> 
+          </li>                
+          <li class="nav-item">
+            <a class="nav-item nav-link" target="_blank" href="http://urbandelivery.info/panelvestexJOSE/">Newsletter</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a class="nav-item nav-link" href="#" (click)="logout()">Log Out</a>    
+        </span>
+      </div>
+    </nav>

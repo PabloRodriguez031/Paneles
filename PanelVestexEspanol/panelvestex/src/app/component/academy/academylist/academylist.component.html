@@ -1,0 +1,28 @@
+<br><br>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered">
+
+            <tr *ngFor="let academylista of academyList">
+              <td>Edit Academy</td>
+              <td>
+                <button type="button" (click)="onEdit(academylista)" class="btn btn-outline-danger btn-sm">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          
+          </table>
+    </div>
+
+    
+
+    <div class="col-md-9" *ngIf="mostrarForm">
+      <app-academy></app-academy>
+    </div>
+  </div>
+</div>
+
+
